@@ -1,0 +1,7 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Flood Survival Store"
+theme = "beautifulhugo"
+
+[params]
+  snipcartAPIKey = "YOUR_SNIPCART_PUBLIC_API_KEY" # Replace with your Snipcart public API key

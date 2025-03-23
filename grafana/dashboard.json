@@ -1,0 +1,94 @@
+{
+    "annotations": {
+      "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": null,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "thresholds"},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {"color": "green", "value": null},
+                {"color": "yellow", "value": 50},
+                {"color": "red", "value": 80}
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+        "id": 1,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "text": {}
+        },
+        "pluginVersion": "9.5.1",
+        "targets": [
+          {
+            "expr": "sample_gauge",
+            "legendFormat": "Sample Gauge",
+            "refId": "A"
+          }
+        ],
+        "title": "Sample Gauge",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {"mode": "palette-classic"},
+            "custom": {"axisLabel": "", "axisPlacement": "auto"},
+            "mappings": [],
+            "thresholds": {"mode": "absolute", "steps": []}
+          },
+          "overrides": []
+        },
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+        "id": 2,
+        "options": {
+          "displayMode": "auto",
+          "legend": {"calcs": [], "displayMode": "list", "placement": "bottom"},
+          "tooltip": {"mode": "single"}
+        },
+        "targets": [
+          {
+            "expr": "rate(sample_counter_total[5m])",
+            "legendFormat": "Sample Counter",
+            "refId": "A"
+          }
+        ],
+        "title": "Sample Counter Rate",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "15s",
+    "schemaVersion": 36,
+    "style": "dark",
+    "tags": ["sample"],
+    "templating": {"list": []},
+    "time": {"from": "now-6h", "to": "now"},
+    "timepicker": {},
+    "timezone": "",
+    "title": "Sample Grafana Dashboard",
+    "uid": "sample-dashboard",
+    "version": 1
+  }

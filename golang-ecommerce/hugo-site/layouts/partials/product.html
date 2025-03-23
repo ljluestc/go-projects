@@ -1,0 +1,21 @@
+<div class="product">
+    <h2>{{ .Title }}</h2>
+    <img src="{{ .Params.image }}" alt="{{ .Title }}" style="max-width: 200px;">
+    <p>{{ .Params.description }}</p>
+    <p>Price: ${{ printf "%.2f" .Params.price }}</p>
+    {{ if le .Params.stock 0 }}
+      <span>Out of stock</span>
+    {{ else }}
+      <button
+        class="snipcart-add-item"
+        data-item-id="{{ .Params.id }}"
+        data-item-name="{{ .Title }}"
+        data-item-price="{{ .Params.price }}"
+        data-item-image="{{ .Params.image }}"
+        data-item-url="/"
+        data-item-max-quantity="1"
+        data-item-description="{{ .Params.description }}">
+        Add to cart
+      </button>
+    {{ end }}
+  </div>
